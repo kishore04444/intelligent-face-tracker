@@ -1,0 +1,30 @@
+﻿.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Local database
+database/*.db
+database/*.sqlite
+database/*.sqlite3
+
+# Runtime logs
+logs/events.log
+logs/entries/
+logs/entrys/
+logs/exits/
+
+# Generated output
+output/
+
+# Local videos
+videos/*
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

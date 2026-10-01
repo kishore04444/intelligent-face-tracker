@@ -1,0 +1,7 @@
+﻿2026-10-01 20:48:42,968 | INFO | RECOGNITION_STARTED | track_id=1 | attempt=1
+2026-10-01 20:48:44,966 | INFO | EMBEDDING_GENERATED | track_id=1
+2026-10-01 20:48:44,971 | INFO | FACE_RECOGNIZED | track_id=1 | visitor_id=1 | similarity=0.849
+2026-10-01 20:48:44,974 | INFO | EMBEDDING_TEMPLATE_ADDED | visitor_id=1 | similarity=0.849
+2026-10-01 20:48:44,975 | INFO | VISITOR_RECOGNIZED | visitor_id=1 | track_id=1
+2026-10-01 20:49:10,802 | INFO | TRACK_EXIT | track_id=1 | visitor_id=1
+2026-10-01 20:49:10,807 | INFO | EXIT | visitor_id=1 | track_id=1

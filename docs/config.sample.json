@@ -1,0 +1,20 @@
+﻿{
+    "input": {
+        "source": "0",
+        "type": "camera"
+    },
+    "detection": {
+        "confidence": 0.5,
+        "skip_frames": 5
+    },
+    "recognition": {
+        "similarity_threshold": 0.5
+    },
+    "tracking": {
+        "max_missing_frames": 30
+    },
+    "output": {
+        "show_window": true,
+        "save_images": true
+    }
+}
