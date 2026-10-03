@@ -303,6 +303,14 @@ The configured input source is loaded from:
 
 The application opens the configured camera or video source and processes the detected faces.
 
+
+## Demo Video
+
+A complete demonstration of the Intelligent Face Tracker is available below:
+
+[Watch the Demo Video](https://youtu.be/CvmlnNQYIZg)
+
+
 ## 10. Database
 
 The system uses SQLite:
