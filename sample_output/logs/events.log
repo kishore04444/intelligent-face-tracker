@@ -1,0 +1,50 @@
+2026-10-03 17:27:56,257 | INFO | VISITOR_RECOGNIZED | visitor_id=1 | track_id=3
+2026-10-03 20:10:32,558 | INFO | EMBEDDING_GENERATED | track_id=1
+2026-10-03 20:10:32,565 | INFO | FACE_RECOGNIZED | track_id=1 | visitor_id=1 | similarity=0.851
+2026-10-03 20:10:32,575 | INFO | ENTRY | visitor_id=1 | track_id=1
+2026-10-03 20:10:32,575 | INFO | VISITOR_RECOGNIZED | visitor_id=1 | track_id=1
+2026-10-03 20:10:42,036 | INFO | TRACK_EXIT | track_id=1 | visitor_id=1
+2026-10-03 20:10:42,041 | INFO | EXIT | visitor_id=1 | track_id=1
+2026-10-03 20:10:47,235 | INFO | EMBEDDING_GENERATED | track_id=4
+2026-10-03 20:10:47,239 | INFO | FACE_RECOGNIZED | track_id=4 | visitor_id=1 | similarity=0.775
+2026-10-03 20:10:47,248 | INFO | ENTRY | visitor_id=1 | track_id=4
+2026-10-03 20:10:47,248 | INFO | VISITOR_RECOGNIZED | visitor_id=1 | track_id=4
+2026-10-03 20:20:42,684 | INFO | EMBEDDING_GENERATED | track_id=1
+2026-10-03 20:20:42,702 | INFO | FACE_RECOGNIZED | track_id=1 | visitor_id=1 | similarity=0.819
+2026-10-03 20:20:42,726 | INFO | ENTRY | visitor_id=1 | track_id=1
+2026-10-03 20:20:42,727 | INFO | VISITOR_RECOGNIZED | visitor_id=1 | track_id=1
+2026-10-03 20:21:56,002 | INFO | EMBEDDING_GENERATED | track_id=1
+2026-10-03 20:21:56,009 | INFO | FACE_RECOGNIZED | track_id=1 | visitor_id=1 | similarity=0.890
+2026-10-03 20:21:56,020 | INFO | ENTRY | visitor_id=1 | track_id=1
+2026-10-03 20:21:56,020 | INFO | VISITOR_RECOGNIZED | visitor_id=1 | track_id=1
+2026-10-03 20:27:53,008 | INFO | EMBEDDING_GENERATED | track_id=1
+2026-10-03 20:27:53,033 | INFO | FACE_RECOGNIZED | track_id=1 | visitor_id=1 | similarity=0.816
+2026-10-03 20:27:53,041 | INFO | ENTRY | visitor_id=1 | track_id=1
+2026-10-03 20:27:53,041 | INFO | VISITOR_RECOGNIZED | visitor_id=1 | track_id=1
+2026-10-03 20:31:09,180 | INFO | EMBEDDING_GENERATED | track_id=1
+2026-10-03 20:31:09,185 | INFO | FACE_RECOGNIZED | track_id=1 | visitor_id=1 | similarity=0.881
+2026-10-03 20:31:09,192 | INFO | ENTRY | visitor_id=1 | track_id=1
+2026-10-03 20:31:09,192 | INFO | VISITOR_RECOGNIZED | visitor_id=1 | track_id=1
+2026-10-03 20:31:34,567 | INFO | TRACK_EXIT | track_id=1 | visitor_id=1
+2026-10-03 20:31:34,573 | INFO | EXIT | visitor_id=1 | track_id=1
+2026-10-03 20:31:40,820 | INFO | EMBEDDING_GENERATED | track_id=4
+2026-10-03 20:31:40,824 | INFO | FACE_RECOGNIZED | track_id=4 | visitor_id=1 | similarity=0.843
+2026-10-03 20:31:40,833 | INFO | ENTRY | visitor_id=1 | track_id=4
+2026-10-03 20:31:40,833 | INFO | VISITOR_RECOGNIZED | visitor_id=1 | track_id=4
+2026-10-03 20:32:01,424 | INFO | EMBEDDING_GENERATED | track_id=5
+2026-10-03 20:32:01,425 | INFO | NEW_FACE_PENDING | track_id=5
+2026-10-03 20:32:03,734 | INFO | EMBEDDING_GENERATED | track_id=5
+2026-10-03 20:32:03,736 | INFO | PENDING_FACE_CHECK | track_id=5 | similarity=0.888 | observations=2
+2026-10-03 20:32:06,026 | INFO | EMBEDDING_GENERATED | track_id=5
+2026-10-03 20:32:06,028 | INFO | PENDING_FACE_CHECK | track_id=5 | similarity=0.901 | observations=3
+2026-10-03 20:32:06,034 | INFO | VISITOR_REGISTERED | track_id=5 | visitor_id=2
+2026-10-03 20:32:06,056 | INFO | ENTRY | visitor_id=2 | track_id=5
+2026-10-03 20:32:06,057 | INFO | VISITOR_REGISTERED | visitor_id=2 | track_id=5
+2026-10-03 20:32:15,263 | INFO | TRACK_EXIT | track_id=5 | visitor_id=2
+2026-10-03 20:32:15,270 | INFO | EXIT | visitor_id=2 | track_id=5
+2026-10-03 20:32:28,697 | INFO | EMBEDDING_GENERATED | track_id=6
+2026-10-03 20:32:28,701 | INFO | FACE_RECOGNIZED | track_id=6 | visitor_id=2 | similarity=0.765
+2026-10-03 20:32:28,711 | INFO | ENTRY | visitor_id=2 | track_id=6
+2026-10-03 20:32:28,711 | INFO | VISITOR_RECOGNIZED | visitor_id=2 | track_id=6
+2026-10-03 20:32:44,656 | INFO | TRACK_EXIT | track_id=6 | visitor_id=2
+2026-10-03 20:32:44,664 | INFO | EXIT | visitor_id=2 | track_id=6
