@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>VisitorIQ — Operations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-icon">V</div>
+      <div><b>VisitorIQ</b><small>Computer Vision</small></div>
+    </div>
+
+    <div class="nav-title">MONITORING</div>
+    <nav>
+      <button class="nav-item active" data-view="overview"><span>▦</span> Overview</button>
+      <button class="nav-item" data-view="visitors"><span>◯</span> Visitors</button>
+      <button class="nav-item" data-view="events"><span>≡</span> Event log</button>
+      <button class="nav-item" data-view="system"><span>⚙</span> System</button>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="connection">
+        <div class="connection-head">
+          <span class="status-dot"></span>
+          <div><b id="engineState">Connected</b><small>Local AI pipeline</small></div>
+        </div>
+        <div class="tech-row"><span>YOLOv8</span><span>ByteTrack</span></div>
+        <div class="tech-row"><span>ArcFace</span><span>SQLite</span></div>
+      </div>
+      <small class="build">INTELLIGENT FACE TRACKER · v1.0</small>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <div class="crumb">Operations / Overview</div>
+        <h1 id="pageTitle">Visitor monitoring</h1>
+        <p>Real-time face detection, recognition and visitor tracking.</p>
+      </div>
+      <div class="top-status">
+        <span class="session"><i class="status-dot"></i> LIVE SESSION</span>
+        <span id="clock">--:--:--</span>
+      </div>
+    </header>
+
+    <section id="overview" class="view active-view">
+      <div class="stats">
+        <article class="stat-card">
+          <div class="stat-top"><span>UNIQUE VISITORS</span><b>UV</b></div>
+          <strong id="uniqueCount">0</strong>
+          <small>Current session</small>
+        </article>
+        <article class="stat-card">
+          <div class="stat-top"><span>ACTIVE NOW</span><b class="green">●</b></div>
+          <strong id="activeCount">0</strong>
+          <small>Currently tracked</small>
+        </article>
+        <article class="stat-card">
+          <div class="stat-top"><span>ENTRIES</span><b>IN</b></div>
+          <strong id="entryCount">0</strong>
+          <small>Current session</small>
+        </article>
+        <article class="stat-card">
+          <div class="stat-top"><span>EXITS</span><b>OUT</b></div>
+          <strong id="exitCount">0</strong>
+          <small>Current session</small>
+        </article>
+      </div>
+
+      <div class="main-grid">
+        <section class="card camera-card">
+          <div class="card-head">
+            <div><span class="overline">CAMERA 01</span><h2>Live camera</h2></div>
+            <span class="state-badge"><i></i> Receiving</span>
+          </div>
+          <div class="camera-wrap">
+            <img id="liveFeed" src="/api/stream" alt="Live annotated camera stream">
+            <div id="feedMessage" class="feed-message">Connecting to camera…</div>
+            <span class="camera-label top-left">LIVE · ANNOTATED</span>
+            <span class="camera-label bottom-left">YOLOv8 · BYTETRACK · ARCFACE</span>
+            <span class="camera-label bottom-right">LOCAL CPU</span>
+          </div>
+          <div class="camera-footer">
+            <span><i class="status-dot"></i> Detection active</span>
+            <span id="trackSummary">0 active tracks</span>
+            <span>OpenCV</span>
+          </div>
+        </section>
+
+        <section class="card events-card">
+          <div class="card-head">
+            <div><span class="overline">LIVE ACTIVITY</span><h2>Recent events</h2></div>
+            <button class="link-btn" data-view-target="events">View log →</button>
+          </div>
+          <div id="eventList" class="event-list"></div>
+        </section>
+      </div>
+
+      <div class="lower-grid">
+        <section class="card summary-card">
+          <div class="card-head">
+            <div><span class="overline">SESSION METRICS</span><h2>Traffic summary</h2></div>
+            <span class="muted">Live</span>
+          </div>
+          <div class="summary-values">
+            <div><span>Net occupancy</span><b id="netOccupancy">0</b><small>entries − exits</small></div>
+            <div><span>Exit rate</span><b id="exitRate">0%</b><small>exits / entries</small></div>
+            <div><span>Registered</span><b id="registeredCount">0</b><small>stored identities</small></div>
+          </div>
+          <div id="activityBars" class="bars"></div>
+        </section>
+
+        <section class="card pipeline-card">
+          <div class="card-head">
+            <div><span class="overline">PROCESSING</span><h2>AI pipeline</h2></div>
+            <span class="muted">Operational</span>
+          </div>
+          <div class="pipeline">
+            <div><span>01</span><b>YOLOv8 Face Detection</b><em>READY</em></div>
+            <div><span>02</span><b>ByteTrack Tracking</b><em>READY</em></div>
+            <div><span>03</span><b>InsightFace / ArcFace</b><em>READY</em></div>
+            <div><span>04</span><b>SQLite Event Store</b><em>READY</em></div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="visitors" class="view">
+      <div class="section-head">
+        <div><span class="overline">IDENTITY STORE</span><h2>Visitor directory</h2><p>Registered identities from the recognition pipeline.</p></div>
+        <label class="search"><span>⌕</span><input id="visitorSearch" placeholder="Search visitor ID"></label>
+      </div>
+      <div id="visitorGrid" class="visitor-grid"></div>
+    </section>
+
+    <section id="events" class="view">
+      <div class="section-head">
+        <div><span class="overline">AUDIT TRAIL</span><h2>Event log</h2><p>Entry, recognition, tracking and exit activity.</p></div>
+        <span class="record-count" id="eventCountLabel">0 records</span>
+      </div>
+      <section class="card table-card">
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>Event</th><th>Visitor</th><th>Timestamp</th><th>Evidence</th><th>Status</th></tr></thead>
+            <tbody id="eventTable"></tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+
+    <section id="system" class="view">
+      <div class="section-head">
+        <div><span class="overline">RUNTIME</span><h2>System status</h2><p>Components used by the intelligent face tracker.</p></div>
+      </div>
+      <div class="system-grid">
+        <article class="card system-item"><span>DETECTION</span><h3>YOLOv8 Face</h3><p>Face detection and confidence filtering.</p><b>Operational</b></article>
+        <article class="card system-item"><span>TRACKING</span><h3>ByteTrack</h3><p>Stable track IDs across video frames.</p><b>Operational</b></article>
+        <article class="card system-item"><span>RECOGNITION</span><h3>InsightFace / ArcFace</h3><p>Face embeddings and identity matching.</p><b>Operational</b></article>
+        <article class="card system-item"><span>DATABASE</span><h3>SQLite</h3><p>Visitors, embeddings and event metadata.</p><b>Operational</b></article>
+        <article class="card system-item"><span>INPUT</span><h3>Camera / RTSP</h3><p>Configurable camera or network source.</p><b>Ready</b></article>
+        <article class="card system-item"><span>LOGGING</span><h3>Events + images</h3><p>Timestamped entry and exit evidence.</p><b>Operational</b></article>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div class="modal-backdrop" id="visitorModal">
+  <div class="modal">
+    <button class="modal-close" id="modalClose">×</button>
+    <div class="modal-id" id="modalAvatar">01</div>
+    <span class="overline">VISITOR PROFILE</span>
+    <h2 id="modalTitle">Visitor 1</h2>
+    <div class="detail-grid"></div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
